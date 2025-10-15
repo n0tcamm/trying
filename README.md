@@ -530,7 +530,7 @@ docker network ls                # Ver redes
 docker system prune              # Limpiar recursos no usados
 ```
 
-## 🚢 Despliegue
+##  Despliegue
 
 ### Docker
 
