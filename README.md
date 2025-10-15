@@ -1,6 +1,6 @@
-# 🚀 Microservices Platform
+#  Microservices Platform
 
-## 📑 Tabla de Contenidos
+## Tabla de Contenidos
 
 - [Descripción del Proyecto](#-descripción-del-proyecto)
 - [Características](#-características-detalladas)
@@ -21,11 +21,11 @@
 
 ---
 
-## 📋 Descripción del Proyecto
+##  Descripción del Proyecto
 
 **Microservices Platform** es una plataforma completa y moderna para crear, gestionar y desplegar microservicios de forma sencilla y eficiente. La plataforma permite a los desarrolladores crear microservicios en **Python** o **JavaScript**, gestionarlos a través de un dashboard intuitivo y desplegarlos automáticamente en contenedores Docker.
 
-### 🎯 Objetivo Principal
+###  Objetivo Principal
 
 Simplificar el proceso de creación y gestión de microservicios, permitiendo a los desarrolladores:
 - Crear microservicios sin configuración manual de Docker
@@ -33,7 +33,7 @@ Simplificar el proceso de creación y gestión de microservicios, permitiendo a 
 - Desplegar y escalar servicios de forma automática
 - Monitorear el estado de los servicios en tiempo real
 
-### 🔑 Características Clave
+### Características Clave
 
 - **100% Basado en Contenedores Docker**: Cada microservicio se ejecuta en su propio contenedor aislado
 - **Multi-lenguaje**: Soporte para Python y JavaScript
@@ -44,26 +44,26 @@ Simplificar el proceso de creación y gestión de microservicios, permitiendo a 
 - **Health Checks**: Monitoreo automático del estado de los servicios
 - **Auto-restart**: Reinicio automático de contenedores en caso de fallo
 
-## ✨ Características Detalladas
+##  Características Detalladas
 
-- ✅ Crear y gestionar microservicios (Python/JavaScript)
-- ✅ **100% basado en contenedores Docker**
-- ✅ Generación automática de Dockerfiles
-- ✅ Control completo de contenedores Docker
-- ✅ Dashboard intuitivo con UI moderna
-- ✅ Operaciones bulk (iniciar/detener todos)
-- ✅ Integración con Roble para bases de datos
-- ✅ Validación de código y seguridad
-- ✅ Auto-restart de contenedores
-- ✅ Health checks integrados
+-  Crear y gestionar microservicios (Python/JavaScript)
+-  **100% basado en contenedores Docker**
+-  Generación automática de Dockerfiles
+-  Control completo de contenedores Docker
+-  Dashboard intuitivo con UI moderna
+-  Operaciones bulk (iniciar/detener todos)
+-  Integración con Roble para bases de datos
+-  Validación de código y seguridad
+-  Auto-restart de contenedores
+-  Health checks integrados
 
-## 🛠 Stack Tecnológico
+## Stack Tecnológico
 
 **Frontend:** Next.js 15, TypeScript, Tailwind CSS, Radix UI  
 **Backend:** Next.js API Routes, Dockerode  
 **DevOps:** Docker, Docker Compose
 
-## ⚡ Quick Start
+##  Quick Start
 
 ### Instalación en 3 Pasos
 
@@ -81,7 +81,7 @@ docker network create microservices_net
 npm run dev
 ```
 
-Abre `http://localhost:3000` y ¡listo! 🚀
+Abre `http://localhost:3000` y ¡listo! 
 
 ### Crear tu Primer Microservicio
 
@@ -93,7 +93,7 @@ Abre `http://localhost:3000` y ¡listo! 🚀
 3. Haz clic en "Create Service"
 4. ¡El contenedor se construye y ejecuta automáticamente!
 
-## 🚀 Instalación Detallada
+##  Instalación Detallada
 
 ### Requisitos Previos
 
@@ -153,7 +153,7 @@ sudo systemctl start docker
 # Abre Docker Desktop
 ```
 
-## ⚙️ Configuración
+## Configuración
 
 ### Variables de Entorno
 
@@ -184,7 +184,7 @@ NODE_ENV=development
 
 **Nota:** Ajusta las credenciales de Roble según tu configuración.
 
-## 📖 Guía de Uso
+##  Guía de Uso
 
 ### Crear un Microservicio
 
@@ -252,7 +252,7 @@ docker ps | grep microservice-{id}     # Ver estado
 docker stats microservice-{id}         # Ver recursos
 ```
 
-## 🔌 API Principal
+##  API Principal
 
 ### Endpoints Disponibles
 
@@ -286,7 +286,7 @@ docker stats microservice-{id}         # Ver recursos
 | GET | `/api/services/bulk/status` | Estado de todos los servicios |
 | POST | `/api/services/bulk/sync` | Sincronizar con Docker |
 
-## 📝 Ejemplos de API
+##  Ejemplos de API
 
 ### Crear Servicio
 
@@ -359,7 +359,7 @@ curl -X POST http://localhost:3000/api/services/{id}/invoke \
 }
 ```
 
-## 🎯 Tipos de Servicios
+##  Tipos de Servicios
 
 ### Execution
 Servicios estándar que ejecutan código personalizado.
@@ -385,7 +385,7 @@ Servicios integrados con Roble para bases de datos.
 }
 ```
 
-## 🏗 Arquitectura
+## Arquitectura
 
 ### Diagrama del Sistema
 
@@ -426,7 +426,7 @@ micro_services/
 | **Restart** | `unless-stopped` |
 | **Health Check** | 30s |
 
-## 🔧 Scripts
+##  Scripts
 
 ```bash
 npm run dev      # Desarrollo
@@ -435,7 +435,7 @@ npm start        # Servidor producción
 npm run lint     # Linter
 ```
 
-## 🐳 Cómo Funcionan los Contenedores
+##  Cómo Funcionan los Contenedores
 
 ### Flujo de Creación
 
@@ -459,7 +459,7 @@ microservice-{id}/
 - `GET /health` - Health check
 - `POST /execute` - Ejecutar código
 
-## 🐳 Construcción y Ejecución de Contenedores
+##  Construcción y Ejecución de Contenedores
 
 ### Opción 1: Dashboard (Recomendado)
 
@@ -565,7 +565,7 @@ docker network create microservices_net
 npm run build && npm start
 ```
 
-## 🔍 Troubleshooting
+##  Troubleshooting
 
 | Problema | Solución |
 |----------|----------|
@@ -577,11 +577,11 @@ npm run build && npm start
 | Variables no cargan | Verificar que `.env.local` existe |
 | Servicios no crean | Verificar `ENABLE_DOCKER_RUNTIME=true` |
 
-## 📝 Licencia
+##  Licencia
 
 MIT
 
-## 🔗 Enlaces
+##  Enlaces
 
 - [Next.js](https://nextjs.org/docs)
 - [Docker](https://docs.docker.com/)
@@ -589,4 +589,4 @@ MIT
 
 ---
 
-⭐ Si te fue útil, ¡dale una estrella!
+ Si te fue útil, ¡dale una estrella!
