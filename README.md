@@ -192,9 +192,7 @@ NODE_ENV=development
 
 **API:**
 ```bash
-curl -X POST http://localhost:3000/api/services \
-  -H "Content-Type: application/json" \
-  -d '{"name": "Calculator", "language": "python", "type": "execution", "code": "def add(a, b): return a + b"}'
+curl -X POST http://localhost:3000/api/services   -H "Content-Type: application/json"   -d '{"name": "Calculator", "language": "python", "type": "execution", "code": "def add(a, b): return a + b"}'
 ```
 
 ### Gestionar Servicios
@@ -210,35 +208,98 @@ curl -X POST http://localhost:3000/api/services \
 
 **Bulk:** Iniciar/detener todos, sincronizar con Docker
 
+---
+
 ### Ejemplos de Código
 
-**Python:**
+#### **1. Python Básico**
+
 ```python
-def process_data(data):
-    return [item['value'] * 2 for item in data]
+def hola():
+    return "Hola mundo"
 ```
 
-**JavaScript:**
+Este ejemplo retorna un mensaje simple cuando el servicio es invocado.  
+Puedes probarlo ejecutando el endpoint:
+
+```bash
+curl http://localhost:3000/{id}/execute
+```
+
+---
+
+#### **2. Servicio con Parámetros**
+
+```python
+# endpoint está en http://localhost:3000/{id}/execute?a=1&b=2
+def suma():
+    a = request.args.get('a', default=0, type=int)
+    b = request.args.get('b', default=0, type=int)
+    resultado = a + b
+    return f"La suma de {a} y {b} es {resultado}"
+```
+
+Ejemplo de ejecución:
+
+```bash
+curl "http://localhost:3000/{id}/execute?a=7&b=5"
+```
+
+**Respuesta esperada:**
+```json
+{
+  "success": true,
+  "result": "La suma de 7 y 5 es 12"
+}
+```
+
+---
+
+#### **3. Microservicio Roble (Acceso a Base de Datos)**
+
+```python
+def main():
+    records = read_data()
+    print(f"Found {len(records)} records")
+    
+    for record in records:
+        print(f"Record ID: {record.get('_id')}")
+        print(f"Data: {record}")
+    
+    return {
+        "message": "Roble microservice executed successfully",
+        "records_count": len(records),
+        "records": records,
+        "status": "completed"
+    }
+
+# Available helper functions:
+# - read_data(filters=None): Read records from the table
+# - insert_data(records): Insert new records
+# - update_data(record_id, updates): Update a specific record
+# - delete_data(record_id): Delete a specific record
+```
+
+Este ejemplo muestra cómo interactuar con **Roble**, leyendo registros desde una base de datos conectada.  
+
+---
+
+#### **4. JavaScript**
+
 ```javascript
 function calculate(items) {
     return items.reduce((sum, item) => sum + item.price, 0);
 }
 ```
 
-**Roble (con acceso a DB):**
-```python
-import os
-def query_db():
-    token = os.getenv('ROBLE_TOKEN')
-    return {"status": "success"}
-```
+Ejemplo de un microservicio en JavaScript que calcula el total de precios en una lista de objetos.
+
+---
 
 ### Invocar Servicio
 
 ```bash
-curl -X POST http://localhost:3000/api/services/{id}/invoke \
-  -H "Content-Type: application/json" \
-  -d '{"param": "value"}'
+curl -X POST http://localhost:3000/api/services/{id}/invoke   -H "Content-Type: application/json"   -d '{"param": "value"}'
 ```
 
 ### Monitorear
@@ -248,6 +309,8 @@ docker logs -f microservice-{id}        # Ver logs
 docker ps | grep microservice-{id}     # Ver estado
 docker stats microservice-{id}         # Ver recursos
 ```
+
+---
 
 ##  API Principal
 
