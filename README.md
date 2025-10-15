@@ -43,9 +43,6 @@ Simplificar el proceso de creación y gestión de microservicios, permitiendo a 
 - **Operaciones Bulk**: Gestiona múltiples servicios simultáneamente
 - **Health Checks**: Monitoreo automático del estado de los servicios
 - **Auto-restart**: Reinicio automático de contenedores en caso de fallo
-
-##  Características Detalladas
-
 -  Crear y gestionar microservicios (Python/JavaScript)
 -  **100% basado en contenedores Docker**
 -  Generación automática de Dockerfiles
@@ -71,7 +68,7 @@ Simplificar el proceso de creación y gestión de microservicios, permitiendo a 
 # 1. Clonar e instalar
 git clone <tu-repositorio>
 cd micro_services
-npm install
+npm install --legacy-peer-deps
 
 # 2. Configurar y crear red Docker
 cp .env.example .env.local  # Editar con tus credenciales
@@ -119,7 +116,7 @@ git clone <tu-repositorio>
 cd micro_services
 
 # 2. Instalar dependencias
-npm install
+npm install --legacy-peer-deps
 
 # 3. Configurar variables de entorno
 # Crea un archivo .env.local en la raíz del proyecto
